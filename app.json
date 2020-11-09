@@ -1,7 +1,12 @@
 {
   "build": {
-    "buildpacks": {
-      "builder": "heroku/buildpacks"
+    "skip": true
+  },
+  "hooks": {
+    "prebuild": {
+      "commands": [
+        "./sbt jibDockerBuild"
+      ]
     }
   }
 }

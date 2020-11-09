@@ -1,5 +1,5 @@
 Sample Scala
------------------
+------------
 
 Run Locally (with Java 8+ installed):
 ```
@@ -8,12 +8,12 @@ Run Locally (with Java 8+ installed):
 
 Build Docker Container:
 ```
-pack build --builder=heroku/buildpacks scala-webapp:buildpacks
+./sbt jibDockerBuild
 ```
 
 Run Locally with Docker:
 ```
-docker run -it -ePORT=8080 -p8080:8080 scala-webapp:buildpacks
+docker run -it -ePORT=8080 -p8080:8080 scala-webapp:jib
 ```
 
 Run on Cloud Run (with two clicks):

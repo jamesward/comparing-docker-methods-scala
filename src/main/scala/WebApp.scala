@@ -5,7 +5,7 @@ import com.sun.net.httpserver.{HttpHandler, HttpServer}
 import scala.util.Using
 
 @main def hello =
-  val port = System.getenv().getOrDefault("PORT", "8080").toInt
+  val port = sys.env.getOrElse("PORT", "8080").toInt
 
   val server = HttpServer.create(new InetSocketAddress(port), 0)
 
