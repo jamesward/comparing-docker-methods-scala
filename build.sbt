@@ -1,5 +1,7 @@
 enablePlugins(GraalVMNativeImagePlugin, DockerPlugin)
 
+name := "comparing-docker-methods-scala"
+
 // For 3.0, waiting on: https://github.com/scalameta/svm-subs/issues/1
 scalaVersion := "2.13.3"
 
