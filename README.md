@@ -8,12 +8,12 @@ Run Locally (with Java 8+ installed):
 
 Build Docker Container:
 ```
-./sbt jibDockerBuild
+./sbt docker:publishLocal
 ```
 
 Run Locally with Docker:
 ```
-docker run -it -ePORT=8080 -p8080:8080 scala-webapp:jib
+docker run -it -ePORT=8080 -p8080:8080 scala-webapp:docker
 ```
 
 Run on Cloud Run (with two clicks):

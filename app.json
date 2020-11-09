@@ -5,7 +5,7 @@
   "hooks": {
     "prebuild": {
       "commands": [
-        "./sbt jibDockerBuild"
+        "./sbt docker:publishLocal"
       ]
     }
   }
