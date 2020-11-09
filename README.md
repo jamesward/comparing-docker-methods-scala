@@ -8,12 +8,12 @@ Run Locally (with Java 8+ installed):
 
 Build Docker Container:
 ```
-./sbt docker:publishLocal
+docker build -t scala-webapp:graalvm .
 ```
 
 Run Locally with Docker:
 ```
-docker run -it -ePORT=8080 -p8080:8080 scala-webapp:docker
+docker run -it -ePORT=8080 -p8080:8080 scala-webapp:graalvm
 ```
 
 Run on Cloud Run (with two clicks):
