@@ -1,4 +1,4 @@
-FROM oracle/graalvm-ce:20.2.0-java11 as builder
+FROM oracle/graalvm-ce:20.3.0-java11 as builder
 
 WORKDIR /app
 COPY . /app
@@ -28,6 +28,12 @@ RUN curl -L -o zlib.tar.gz https://zlib.net/zlib-1.2.11.tar.gz && \
 #END PRE-REQUISITES FOR STATIC NATIVE IMAGES FOR GRAAL 20.2.0
 
 RUN ./sbt graalvm-native-image:packageBin
+
+RUN yum install -y xz
+RUN curl -L -o upx-3.96-amd64_linux.tar.xz https://github.com/upx/upx/releases/download/v3.96/upx-3.96-amd64_linux.tar.xz
+RUN tar -xvf upx-3.96-amd64_linux.tar.xz
+RUN upx-3.96-amd64_linux/upx -7 /app/target/graalvm-native-image/comparing-docker-methods-scala
+
 
 FROM scratch
 
