@@ -2,7 +2,7 @@ import com.typesafe.sbt.packager.docker.DockerPermissionStrategy
 
 enablePlugins(LauncherJarPlugin, DockerPlugin)
 
-scalaVersion := "3.0.0-M1"
+scalaVersion := "3.0.0"
 
 daemonUserUid in Docker := None
 daemonUser in Docker := "root"
