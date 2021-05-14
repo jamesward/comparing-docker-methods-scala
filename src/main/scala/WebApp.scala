@@ -10,11 +10,10 @@ object WebApp extends App {
 
   val server = HttpServer.create(new InetSocketAddress(port), 0)
 
-  val handler: HttpHandler = exchange => {
+  val handler: HttpHandler = exchange =>
     val response = "hello, world".getBytes
     exchange.sendResponseHeaders(200, response.length)
     Using(exchange.getResponseBody)(_.write(response))
-  }
 
   server.createContext("/", handler)
 
